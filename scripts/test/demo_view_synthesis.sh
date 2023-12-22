@@ -1,8 +1,8 @@
 set -x
 
-checkpoints_dir=/kaggle/working/CVPR23-E3DGE-main/logs/CelebA-HQ/inference-check
+checkpoints_dir=logs/CelebA-HQ/inference-check
 # eval_dataset_path=assets/demo_imgs
-eval_dataset_path=/kaggle/input/e3dge-dataset/CVPR23-E3DGE-main/CVPR23-E3DGE-main/assets/colab_demo_img
+eval_dataset_path=assets/colab_demo_img
 test_dataset_path=${eval_dataset_path}
 dataset_path=${eval_dataset_path}
 
@@ -18,8 +18,8 @@ ngpu=1
 
 runner=E3DGE_Full_Runner
 weight=0.01
-ckpt_path=/kaggle/input/e3dge-dataset/CVPR23-E3DGE-main/CVPR23-E3DGE-main/pretrained_models/E3DGE_Full_Runner.pt
-checkpoints_dir=/kaggle/working/CVPR23-E3DGE-main/logs/view_synthesis/${runner}
+ckpt_path=pretrained_models/E3DGE_Full_Runner.pt
+checkpoints_dir=logs/view_synthesis/${runner}
 
 export CUDA_VISIBLE_DEVICES=0
 
@@ -94,3 +94,5 @@ python test_ae.py \
 --render_video \
 --azim_video \
 --video_frames 9 \
+# --video_frames 250 \
+# --no_surface_renderings \
