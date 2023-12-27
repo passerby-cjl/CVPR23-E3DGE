@@ -26,5 +26,6 @@ if __name__ == '__main__':
     parser.add_argument('--device', type=str, default='cuda')
     parser.add_argument('--to68', action='store_true')
     args = parser.parse_args()
-
+    print(f'image path: {args.img_path}')
+    print(f'save path: {args.save_path}')
     main(args)
