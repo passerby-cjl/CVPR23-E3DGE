@@ -10,7 +10,7 @@ def main(args):
     input_img = args.img_path
     # initialize face helper
     face_helper = FaceRestoreHelper(
-        upscale_factor=1, face_size=512, crop_ratio=(1, 1), det_model='retinaface_resnet50', save_ext='jpg')
+        upscale_factor=1, face_size=512, crop_ratio=(1, 1), det_model='retinaface_resnet50', save_ext='jpg', pad_blur=False)
 
     face_helper.clean_all()
 
@@ -31,7 +31,7 @@ def main(args):
 
     face_helper.read_image(img)
     # get face landmarks for each face
-    face_helper.get_face_landmarks_5(only_center_face=True, pad_blur=False)
+    face_helper.get_face_landmarks_5(only_center_face=True)
     # align and warp each face
     # save_crop_path = os.path.join(save_root, 'cropped_faces', img_name)
     save_crop_path = args.save_path
