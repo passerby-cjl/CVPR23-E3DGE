@@ -22,10 +22,11 @@ def main(args):
     print(bboxes.shape, bboxes)
     bboxes = bboxes[0]
 
-    bboxes[0] -= 100
-    bboxes[1] -= 100
-    bboxes[2] += 100
-    bboxes[3] += 100
+    # bboxes[0] -= 100
+    # bboxes[1] -= 100
+    bboxes[2] += 200
+    bboxes[3] += 200
+    img = np.pad(img, 100, 'constant', constant_values=0)
     img = img[int(bboxes[1]):int(bboxes[3]), int(bboxes[0]):int(bboxes[2]), :]
 
     face_helper.read_image(img)
