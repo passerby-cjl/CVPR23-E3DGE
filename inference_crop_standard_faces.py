@@ -26,7 +26,7 @@ def main(args):
     # bboxes[1] -= 100
     bboxes[2] += 200
     bboxes[3] += 200
-    img = np.pad(img, 100, 'constant', constant_values=0)
+    img = cv2.copyMakeBorder(img,100,100,100,100,cv2.BORDER_CONSTANT,value = (0，0，0))
     img = img[int(bboxes[1]):int(bboxes[3]), int(bboxes[0]):int(bboxes[2]), :]
 
     face_helper.read_image(img)
