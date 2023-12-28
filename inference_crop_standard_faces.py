@@ -19,8 +19,8 @@ def main(args):
     with torch.no_grad():
         bboxes = det_net.detect_faces(img, 0.97)
         # x0, y0, x1, y1, confidence_score, five points (x, y)
-    print(bboxes.shape)
-    bboxes = bboxes[3]
+    print(bboxes.shape, bboxes)
+    bboxes = bboxes[0]
 
     bboxes[0] -= 100
     bboxes[1] -= 100
