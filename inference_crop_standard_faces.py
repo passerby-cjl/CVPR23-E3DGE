@@ -1,5 +1,6 @@
 import cv2
 import torch
+import argparse
 
 from facexlib.detection import init_detection_model
 from facexlib.utils.face_restoration_helper import FaceRestoreHelper
