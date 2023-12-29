@@ -12,8 +12,8 @@ def main(args):
     img = cv2.imread(args.img_path)
     with torch.no_grad():
         bboxes, warped_face_list = det_net.align_multi(img, 0.97)
-    print(bboxes.shape,bboxes)
-    print(len(warped_face_list))
+    img = warped_face_list[0]
+    img = cv2.resize(img, (1024, 1024))
     cv2.imwrite(args.save_path,warped_face_list[0])
 
 if __name__ == '__main__':
