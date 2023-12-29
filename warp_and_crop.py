@@ -1,10 +1,8 @@
 import cv2
-import glob
 import numpy as np
 import os
 import torch
-from PIL import Image
-from tqdm import tqdm
+import argparse
 
 from facexlib.detection import init_detection_model
 
