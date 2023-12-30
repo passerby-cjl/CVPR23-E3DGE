@@ -14,7 +14,7 @@ def main(args):
         bboxes, warped_face_list = det_net.align_multi(img, 0.97)
     img = warped_face_list[0]
     img = cv2.resize(img, (1024, 1024))
-    cv2.imwrite(args.save_path,warped_face_list[0])
+    cv2.imwrite(args.save_path,img)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
